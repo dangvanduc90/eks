@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: next-webapp
+  name: next-webapp
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: next-webapp
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: next-webapp
+    spec:
+      containers:
+        - image: registry.9prints.com/phucdt/gossby-frontend:staging-6bedba10
+          name: gossby-frontend
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+      imagePullSecrets:
+        - name: regcred
+status: {}

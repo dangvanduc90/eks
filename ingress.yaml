@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: default
+  name: olongvien-ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/group.name: ingress-demo
+    alb.ingress.kubernetes.io/target-type: instance
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:491307981092:certificate/254b2356-ec23-40aa-97b1-91d115594ca0
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+    alb.ingress.kubernetes.io/subnets: subnet-019497fe17e5cf578,subnet-00f8afabdcbd77825
+spec:
+  rules:
+    - host: "olongvien.com"
+      http:
+         paths:
+         - pathType: Prefix
+           path: "/"
+           backend:
+             service:
+               name: olongvien-deployment
+               port:
+                  number: 80

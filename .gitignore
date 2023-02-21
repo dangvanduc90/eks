@@ -1,0 +1,4 @@
+.vagrant
+*.pem
+eks_accessKeys.csv
+.idea
