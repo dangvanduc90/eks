@@ -1,10 +1,8 @@
-
 ##INSTALLION
 ###VPC
-1. tạo vpc
-   1. edit vpc 
-      1. Enable DNS resolution
-      2. Enable DNS hostnames
+1. tạo vpc và phải tích 2 options sau:
+   1. Enable DNS resolution
+   2. Enable DNS hostnames
 2. tạo Internet gateways
    1. Attach to VPC vừa mới tạo ở trên
 3. tạo 4 subnets, 2 private, 2 public
@@ -12,18 +10,18 @@
       1. Enable DNS hostnames
       2. Enable resource name DNS A record on launch 
 4. Trong mục Endpoints
-   1. Service chọn `com.amazonaws.us-east-2.s`
-   2. VPC chọn VPC vừa mới tạo
-5. tạo Route tables cho private subnet
-   1. Edit routes
-       1. Add route
-           1. Destination -> 0.0.0.0/0
-           2. Target -> Internet gateways vừa mới tạo
-   2. Edit subnet associations
-      1. Chọn 2 private subnet
+   1. Service chọn `com.amazonaws.us-east-2.s3`
+   2. Mục VPC: chọn VPC vừa mới tạo
+5. Tạo Route tables cho private subnet
+   1. Edit s[ubnet associations
+      1. Chọn 2 private subn]()et
 6. Đối với Route tables mặc định khi tạo VPC
    1. Edit subnet associations
       1. Chọn 2 public subnet
+   2. Edit routes
+      1. Add route
+         1. Destination -> 0.0.0.0/0
+         2. Target -> Internet gateways vừa mới tạo
 7. Trong file ingress.yaml
    1. Thay subnet bằng 2 public subnet mới tạo
 ###EC2
