@@ -8,19 +8,19 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/group.name: ingress-demo
     alb.ingress.kubernetes.io/target-type: instance
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:491307981092:certificate/254b2356-ec23-40aa-97b1-91d115594ca0
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:059713420548:certificate/ba70645c-f27c-4602-a812-c36ba1c88159
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
-    alb.ingress.kubernetes.io/subnets: subnet-019497fe17e5cf578,subnet-00f8afabdcbd77825
+    alb.ingress.kubernetes.io/subnets: subnet-0e05c75acad07b13a,subnet-0543a8627e620be84
 spec:
   rules:
-    - host: "olongvien.com"
+    - host: "olongvien.online"
       http:
          paths:
          - pathType: Prefix
            path: "/"
            backend:
              service:
-               name: olongvien-deployment
+               name: next-webapp
                port:
                   number: 80
