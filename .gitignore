@@ -2,3 +2,4 @@
 *.pem
 eks_accessKeys.csv
 .idea
+ingress-nginx/freessl
