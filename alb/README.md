@@ -48,7 +48,7 @@ kubectl create secret docker-registry regcred --docker-server=registry.9prints.c
 
 # start application
 run command follow loadbalancer-controller.txt
-kubectl apply -f manifest.yml
+kubectl apply -f deploy.yml
 kubectl apply -f service.yml
 kubectl apply -f ingress.yml
 
