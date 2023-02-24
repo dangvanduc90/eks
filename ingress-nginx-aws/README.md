@@ -11,15 +11,15 @@ helm upgrade --install ingress-nginx ingress-nginx \
 kubectl create secret docker-registry --namespace=ingress-nginx regcred --docker-server=registry.9prints.com --docker-username=dangvanduc90 --docker-password=****** --docker-email=dangvanduc0@gmail.com
 
 # truy cập vào https://freessl.org/ để tạo ssl free 90 ngày, kiểu verify bằng dns, tạo bản ghi txt trong route53 để verify
-# sau đó download về và để toàn bộ file vào trong thư mục ingress-nginx/freessl
+# sau đó download ssl file về và để toàn bộ vào trong thư mục ingress-nginx/freessl
 
 kubectl create secret tls olongvien-tls --key freessl/olongvien.online.key --cert freessl/olongvien.online.pem -n ingress-nginx
 
 kubectl apply -f service.yml
 
-kubectl apply -f deploy.yaml
+kubectl apply -f deploy.yml
 
-kubectl apply -f ingress.yaml
+kubectl apply -f ingress.yml
 
 
 
