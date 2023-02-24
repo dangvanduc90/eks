@@ -30,3 +30,5 @@ UNINSTALLION
 
 # DEBUG
 # kubectl get events
+# aws ec2 describe-vpcs
+# aws ec2 describe-subnets
