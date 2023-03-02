@@ -22,7 +22,7 @@
       1. Add route
          1. Destination -> 0.0.0.0/0
          2. Target -> Internet gateways vừa mới tạo
-7. Trong file ingress.yaml
+7. Trong file ingress.yml
    1. Thay subnet bằng 2 public subnet mới tạo
 ###EC2
 1. Vào mục EC2, tạo key pairs tên là eks dạng pem
@@ -31,7 +31,7 @@
 2. replace to --docker-password
 ###CERTIFICATE
 1. Request public certificate 
-2. Sau khi tạo certificate thì replace certificate-arn trong file ingress.yaml
+2. Sau khi tạo certificate thì replace certificate-arn trong file ingress.yml
 ```
 
 # create stack VPC called my-eks-vpc by aws UI and associat to route table, make sure ticked 'Enable auto-assign public IPv4 address' and ticked 'Enable DNS hostnames' as well
